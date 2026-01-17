@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting - Pemilihan Ketua OSIS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-vote-yea"></i> PEMILIHAN KETUA OSIS</h1>
+            <p>SMA NEGERI 1 BANGUN BANGSA - PERIODE 2023/2024</p>
+        </header>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="voting.html" class="active"><i class="fas fa-vote-yea"></i> Voting</a></li>
+                <li><a href="hasil.html"><i class="fas fa-chart-bar"></i> Hasil</a></li>
+            </ul>
+        </nav>
+        
+        <div class="user-info" id="userInfo">
+            <!-- Informasi pengguna akan diisi oleh JavaScript -->
+        </div>
+        
+        <main class="voting-container">
+            <div class="voting-header">
+                <h2><i class="fas fa-users"></i> KANDIDAT KETUA & WAKIL KETUA OSIS</h2>
+                <p>Pilih <strong>SATU</strong> pasangan calon yang menurut Anda paling mampu memimpin OSIS</p>
+                <div class="voting-status" id="votingStatus">
+                    <span id="statusText"></span>
+                </div>
+            </div>
+            
+            <div class="candidates-container" id="candidatesContainer">
+                <!-- Kandidat akan diisi oleh JavaScript -->
+            </div>
+            
+            <div class="instructions">
+                <h3><i class="fas fa-list-ol"></i> Tata Cara Voting:</h3>
+                <ol>
+                    <li>Baca visi dan misi masing-masing calon</li>
+                    <li>Pilih pasangan calon yang menurut Anda terbaik</li>
+                    <li>Klik tombol <strong>"PILIH KANDIDAT INI"</strong></li>
+                    <li>Konfirmasi pilihan Anda</li>
+                    <li>Setelah memilih, Anda tidak dapat mengubah pilihan</li>
+                </ol>
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> <strong>Ingat:</strong> Setiap siswa hanya dapat memilih <strong>satu kali</strong>.
+                </div>
+            </div>
+            
+            <div class="demo-controls">
+                <h3><i class="fas fa-cogs"></i> Kontrol Demo</h3>
+                <p>Fitur ini hanya untuk keperluan presentasi dan simulasi ulang.</p>
+                <button id="resetVoteBtn" class="btn-reset">
+                    <i class="fas fa-redo"></i> Reset Voting Saya
+                </button>
+                <button id="resetAllBtn" class="btn-reset-all">
+                    <i class="fas fa-trash-alt"></i> Reset Semua Data
+                </button>
+                <p class="demo-note"><i class="fas fa-exclamation-triangle"></i> Reset akan menghapus semua data voting dari browser.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2023 SMA Negeri 1 Bangun Bangsa | Simulasi E-Voting OSIS</p>
+            <p class="footer-links">
+                <a href="index.html" class="link">Kembali ke Login</a> | 
+                <a href="hasil.html" class="link">Lihat Hasil Voting</a>
+            </p>
+        </footer>
+    </div>
+    
+    <!-- Modal untuk konfirmasi voting -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2><i class="fas fa-check-circle"></i> Konfirmasi Pilihan</h2>
+            <p>Anda akan memilih:</p>
+            <div class="confirm-candidate" id="confirmCandidate">
+                <!-- Data kandidat akan diisi oleh JavaScript -->
+            </div>
+            <p><strong>Apakah Anda yakin dengan pilihan ini?</strong></p>
+            <p class="warning">Pilihan tidak dapat diubah setelah dikonfirmasi!</p>
+            <div class="modal-buttons">
+                <button id="cancelVote" class="btn-secondary">Batal</button>
+                <button id="confirmVote" class="btn-primary">Ya, Saya Yakin</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal sukses voting -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success">
+            <h2><i class="fas fa-check-circle"></i> Voting Berhasil!</h2>
+            <p>Terima kasih telah menggunakan hak suara Anda.</p>
+            <p>Pilihan Anda telah tercatat dalam sistem.</p>
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <button id="viewResults" class="btn-primary">Lihat Hasil Voting</button>
+            <button id="closeSuccess" class="btn-secondary">Tutup</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/voting.js"></script>
+</body>
+</html>

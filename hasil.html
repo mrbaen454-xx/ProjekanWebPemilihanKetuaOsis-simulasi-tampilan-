@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Voting - Pemilihan Ketua OSIS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-chart-bar"></i> HASIL VOTING PEMILIHAN KETUA OSIS</h1>
+            <p>SMA NEGERI 1 BANGUN BANGSA - PERIODE 2023/2024</p>
+        </header>
+        
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="voting.html"><i class="fas fa-vote-yea"></i> Voting</a></li>
+                <li><a href="hasil.html" class="active"><i class="fas fa-chart-bar"></i> Hasil</a></li>
+            </ul>
+        </nav>
+        
+        <main class="results-container">
+            <div class="results-header">
+                <h2><i class="fas fa-poll"></i> REKAPITULASI HASIL VOTING</h2>
+                <p>Data diperbarui secara real-time berdasarkan suara yang masuk</p>
+                <div class="stats-overview">
+                    <div class="stat-box">
+                        <h3><i class="fas fa-users"></i> Total Pemilih</h3>
+                        <p id="totalVoters">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3><i class="fas fa-vote-yea"></i> Total Suara</h3>
+                        <p id="totalVotes">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3><i class="fas fa-percentage"></i> Partisipasi</h3>
+                        <p id="participationRate">0%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="charts-container">
+                <div class="chart-box">
+                    <h3><i class="fas fa-chart-pie"></i> Diagram Perolehan Suara</h3>
+                    <div class="chart-container">
+                        <canvas id="voteChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="chart-box">
+                    <h3><i class="fas fa-chart-bar"></i> Perolehan Suara (Numerik)</h3>
+                    <div class="chart-container">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="results-details">
+                <h3><i class="fas fa-list-ol"></i> Detail Perolehan Suara Masing-masing Kandidat</h3>
+                <div class="results-table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Pasangan Calon</th>
+                                <th>Jumlah Suara</th>
+                                <th>Persentase</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTableBody">
+                            <!-- Hasil voting akan diisi oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="winner-section" id="winnerSection">
+                <!-- Pemenang akan diisi oleh JavaScript -->
+            </div>
+            
+            <div class="demo-controls">
+                <h3><i class="fas fa-cogs"></i> Kontrol Demo / Presentasi</h3>
+                <p>Fitur ini digunakan untuk mereset data dalam presentasi atau simulasi ulang.</p>
+                <div class="control-buttons">
+                    <button id="resetAllDataBtn" class="btn-reset-all">
+                        <i class="fas fa-trash-alt"></i> Reset Semua Data Voting
+                    </button>
+                    <button id="addDemoVotesBtn" class="btn-demo">
+                        <i class="fas fa-vote-yea"></i> Tambahkan Data Demo (10 suara acak)
+                    </button>
+                </div>
+                <p class="demo-note"><i class="fas fa-exclamation-triangle"></i> <strong>PERHATIAN:</strong> Reset akan menghapus semua data dari browser.</p>
+            </div>
+            
+            <div class="info-box">
+                <h3><i class="fas fa-info-circle"></i> Informasi Teknis:</h3>
+                <ul>
+                    <li>Data disimpan di <strong>localStorage browser</strong> Anda</li>
+                    <li>Hasil hanya dapat dilihat di browser yang sama</li>
+                    <li>Website ini hanya untuk simulasi, bukan pemilihan resmi</li>
+                    <li>Hasil dapat di-reset untuk keperluan demo/presentasi</li>
+                </ul>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2023 SMA Negeri 1 Bangun Bangsa | Simulasi E-Voting OSIS</p>
+            <p class="footer-links">
+                <a href="index.html" class="link">Kembali ke Login</a> | 
+                <a href="voting.html" class="link">Kembali ke Halaman Voting</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/hasil.js"></script>
+</body>
+</html>

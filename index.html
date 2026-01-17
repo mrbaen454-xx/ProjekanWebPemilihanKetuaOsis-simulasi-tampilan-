@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Simulasi Pemilihan OSIS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-vote-yea"></i> SIMULASI PEMILIHAN KETUA OSIS</h1>
+            <p>SMA NEGERI 1 BANGUN BANGSA</p>
+        </header>
+
+        <main class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h2><i class="fas fa-sign-in-alt"></i> LOGIN SISWA</h2>
+                    <p>Masukkan data diri Anda untuk mengikuti simulasi voting</p>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="nis"><i class="fas fa-id-card"></i> NIS / Nomor Induk Siswa</label>
+                        <input type="text" id="nis" placeholder="Contoh: 12345" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label>
+                        <input type="text" id="nama" placeholder="Contoh: Andi Wijaya" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="kelas"><i class="fas fa-graduation-cap"></i> Kelas</label>
+                        <input type="text" id="kelas" placeholder="Contoh: XII IPA 1" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">
+                        <i class="fas fa-sign-in-alt"></i> MASUK KE VOTING
+                    </button>
+                    
+                    <div class="info-box">
+                        <h3><i class="fas fa-info-circle"></i> Informasi Penting:</h3>
+                        <ul>
+                            <li>Setiap siswa hanya memiliki <strong>1 (satu) hak suara</strong></li>
+                            <li>Voting tidak dapat dibatalkan atau diubah setelah submit</li>
+                            <li>Website ini hanya untuk simulasi dan tugas presentasi</li>
+                            <li>Data akan tersimpan di browser Anda (localStorage)</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="demo-info">
+                <h3><i class="fas fa-laptop-code"></i> Mode Demo / Simulasi</h3>
+                <p>Website ini dibuat untuk simulasi e-voting dalam rangka tugas dan presentasi.</p>
+                <p><strong>Fitur Demo:</strong></p>
+                <ul>
+                    <li>Login simulasi (tanpa password)</li>
+                    <li>Pemilihan 1x per siswa</li>
+                    <li>Hasil real-time dengan persentase</li>
+                    <li>Tombol reset untuk presentasi ulang</li>
+                </ul>
+                <p class="demo-note"><i class="fas fa-exclamation-triangle"></i> <strong>Catatan:</strong> Ini bukan sistem pemilihan resmi.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2023 SMA Negeri 1 Bangun Bangsa | Simulasi E-Voting OSIS</p>
+            <p class="footer-links">
+                <a href="voting.html" class="link">Langsung Voting (Demo)</a> | 
+                <a href="hasil.html" class="link">Lihat Hasil</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
